@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.Views.HomePage"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <Grid Margin="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0"   Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Aspect="AspectFill" Source="m_HomePage_BG.png"/>
+            <Image Grid.Row="1"   Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="1" Aspect="AspectFit" Source="m_MealApp_Logo_Circular.png"/>
+            <StackLayout Grid.Row="3" Grid.ColumnSpan="3" VerticalOptions="End">
+            <material:MaterialLabel HorizontalTextAlignment="Center">Discover the best food from best kitchens</material:MaterialLabel>
+                <Rectangle HeightRequest="20"></Rectangle>
+                <material:MaterialButton x:Name="LoginButton" HeightRequest="70" MinimumHeightRequest="70" Text="Login" Clicked="LoginButton_Clicked" Style="{StaticResource PrimaryButton}" CornerRadius="30"/>
+                <material:MaterialButton x:Name="SigUpButton" HeightRequest="70" MinimumHeightRequest="70" Text="Create an Account" Clicked="SigUpButton_Clicked" Style="{StaticResource PrimaryButton_Outline}" CornerRadius="30"/>
+                <Rectangle HeightRequest="20"></Rectangle>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

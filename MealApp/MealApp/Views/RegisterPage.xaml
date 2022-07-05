@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.Views.RegisterPage"
+             xmlns:materialDS="clr-namespace:Plugin.MaterialDesignControls;assembly=Plugin.MaterialDesignControls"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout Padding="15,50,15,0">
+            <material:MaterialLabel  HorizontalTextAlignment="Center"  Margin="0,20,0,20"  FontSize="{StaticResource Title_FontSize}" Text="SignUp"/>
+            <material:MaterialLabel  HorizontalTextAlignment="Center"  Text="Add your details to signup" FontSize="{StaticResource Content_FontSize}"/>
+
+            <!--<material:MaterialLabel Text="FullName"/>-->
+            <material:MaterialTextField x:Name="fullNameTxt" Placeholder="FullName" UnderlineColor="{StaticResource Primary}" />
+            <!--<material:MaterialLabel Text="Email"/>-->
+            <material:MaterialTextField x:Name="emailTxt" Placeholder="Email" InputType="Email" UnderlineColor="{StaticResource Primary}"/>
+            <!--<material:MaterialLabel Text="Phone"/>-->
+            <material:MaterialTextField x:Name="phoneTxt" Placeholder="Phone" InputType="Telephone" UnderlineColor="{StaticResource Primary}"/>
+
+            <!--<material:MaterialLabel Text="Address"/>-->
+            <!--<material:MaterialTextField x:Name="addressTxt" Placeholder="Address" UnderlineColor="{StaticResource Primary}"/>-->
+            <!--Type="Filled"-->
+            <materialDS:MaterialEditor x:Name="addressTxt" LabelText="Address"  Placeholder="Addresss" TrailingIcon="icon_gps_myLocation.png" />
+
+            <!--<material:MaterialLabel Text="UserName"/>-->
+            <material:MaterialTextField x:Name="userNameTxt" Placeholder="UserName" UnderlineColor="{StaticResource Primary}"/>
+            <!--<material:MaterialLabel Text="Password"/>-->
+            <material:MaterialTextField x:Name="passwordTxt" InputType="Password" Placeholder="Password" UnderlineColor="{StaticResource Primary}"/>
+            <material:MaterialButton x:Name="RegisterButton" Text="Proceed" Clicked="RegisterButton_Clicked" Style="{StaticResource PrimaryButton}" />
+
+            <Label HorizontalTextAlignment="Center" FontSize="{StaticResource Content_FontSize}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an account?"/>
+                        <Span Text=" Login" x:Name="loginPage" TextColor="{StaticResource Primary}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

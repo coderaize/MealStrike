@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.VUser.uViews.uHomePage"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:cControls="clr-namespace:MealApp.Controls"  
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_cart.png" x:Name="CartItem" Clicked="CartItem_Clicked"/>
+        
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RefreshView x:Name="refresher">
+            <!--IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"-->
+            <!-- CollectionView -->
+            <Grid Padding="5">
+                <ScrollView>
+                    <StackLayout>
+                        <Rectangle HeightRequest="2"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout  Grid.Column="1" >
+                                <Label Text="Welcome " FontSize="15" TextColor="{StaticResource Text_Primary}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Welcome "/>
+                                            <Span TextColor="{StaticResource Primary}" Text="" x:Name="userNameLabel" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="3">
+                                <Label Text="Delivering To " FontSize="15" />
+                                <Label Text="  Current Location " FontSize="15" />
+                            </StackLayout>
+                        </Grid>
+
+                        <!--<Rectangle HeightRequest="10"/>-->
+                        <Frame Padding="0" CornerRadius="25" BorderColor="{StaticResource BackgroundPrimary}">
+                            <material:MaterialTextField x:Name="searchTxt" TextChanged="MaterialTextField_TextChanged" CardBackgroundColor="{StaticResource BackgroundPrimary}"  TextFontSize="15" LeadingIcon="icon_search.png" Placeholder="Search" InputType="Plain" UnderlineColor="{StaticResource Primary}" />
+                        </Frame>
+                        <Rectangle HeightRequest="5"/>
+                        <Grid x:Name="menuItems">
+                            <ScrollView Orientation="Horizontal" >
+                                <StackLayout x:Name="optionValues" Orientation="Horizontal" FlowDirection="LeftToRight" Margin="0" HeightRequest="130">
+                                    <!--<cControls:cIconOption x:Name="allIconOption"  LabelText="All" WidthRequest="120" HeightRequest="110" ImageSourceLink="(WebBaseUrl)Images/AppImages/meal_all.jpg"  cClicked="allIconOption_cClicked"/>-->
+                                </StackLayout>
+                            </ScrollView>
+                            <Rectangle HeightRequest="2"/>
+                        </Grid>
+                        <Rectangle HeightRequest="2"/>
+                        <StackLayout>
+                            <material:MaterialLabel Text="Popular Meals" FontSize="30" HorizontalTextAlignment="Center"/>
+                            <Rectangle HeightRequest="2"/>
+                        </StackLayout>
+                        <StackLayout Padding="15,0,15,0" x:Name="mealItems">
+                            <!--<cControls:cMealItem MealName="Habenero Kick" RatingText="2.5" RatingsCount="500" ImageSourceLink="meal/Images/food4.png" cClicked="cMealItem_cClicked" ></cControls:cMealItem>-->
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+
+            </Grid>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>
+

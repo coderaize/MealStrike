@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.VUser.uViews.uCartPage"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:cControls="clr-namespace:MealApp.Controls"  >
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_home.png" x:Name="HomePageIcon" Clicked="HomePageIcon_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,0,10,0">
+                <Image Source="mealapp_logo.png" WidthRequest="100"/>
+                <Label Text="Cart Items" TextColor="{StaticResource Primary}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="35"/>
+
+                <StackLayout x:Name="cartItemsStackPanel">
+
+                </StackLayout>
+
+                <Frame HasShadow="False">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition x:Name="deliveryNoteRow"  Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="110"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Delivery Instructions" Grid.Row="0" Grid.Column="0" />
+                        <Label x:Name="deliveryNoteAddNoteLabel" Text="+ Add Note" TextColor="{StaticResource Text_Primary}" Grid.Row="0" Grid.Column="1" />
+                        <Label x:Name="deliveryNoteLabel" Grid.Row="1" Grid.ColumnSpan="2" FontSize="15" Text=""/>
+                    </Grid>
+                </Frame>
+                <Rectangle Stroke="#EFEFEF" Fill="#EFEFEF" RotationX="180" HeightRequest="2"/>
+                <Grid Padding="5,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0">Sub Total</Label>
+                    <Label HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="1" TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rs."/>
+                                <Span x:Name="subTotalPriceLabel" Text="00"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+                    </Label>
+
+                    <Label Grid.Row="1" Grid.Column="0">Delivery Cost</Label>
+                    <Label HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="1" TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rs."/>
+                                <Span x:Name="deliveryCostPriceLabel" Text="00"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+                    </Label>
+
+                </Grid>
+                <Rectangle Stroke="#EFEFEF" Fill="#EFEFEF" RotationX="180" HeightRequest="2"/>
+                <Grid Padding="5,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0">Total</Label>
+                    <Label  HorizontalTextAlignment="End"  Grid.Column="1" TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rs."/>
+                                <Span x:Name="totalPriceLabel" Text="00"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+                <material:MaterialButton 
+                    x:Name="checkoutButton" 
+                    Style="{StaticResource PrimaryButton}" 
+                    Text="Checkout" Clicked="checkoutButton_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.Controls.cOrderItem"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+  <ContentView.Content>
+        <Frame x:Name="mainGrid" BackgroundColor="LightGray" BorderColor="DarkGray">
+            <Grid RowDefinitions="30"  ColumnDefinitions="1*,100" >
+                <Label Grid.Row="0"  HorizontalTextAlignment="Start"  Grid.Column="0" FontSize="20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="{StaticResource Primary}" Text="Order ID: " FontAttributes="Bold"/>
+                            <Span x:Name="orderIDLabel" Text="0"/>
+                            <Span TextColor="{StaticResource Primary}" Text=" Date:" FontAttributes="Bold"/>
+                            <Span x:Name="orderCreationTimeLabel" Text=""/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Frame  Grid.Row="0"   Grid.Column="1" CornerRadius="15" BackgroundColor="DarkGray" Padding="0">
+                    <Label FontSize="15" HorizontalTextAlignment="Center"  x:Name="deliveryLabel" TextColor="White">Delivered</Label>
+                </Frame>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

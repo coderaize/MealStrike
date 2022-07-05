@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.Views.LoginPage"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout FlowDirection="LeftToRight" VerticalOptions="Start"  Padding="5,0,5,0">
+            <material:MaterialLabel  HorizontalTextAlignment="Center" Margin="0,20,0,20"  FontSize="{StaticResource Title_FontSize}"  Text="Login"/>
+            <material:MaterialLabel  HorizontalTextAlignment="Center"  FontSize="{StaticResource Content_FontSize}" Text="Add your details to login"/>
+
+            <material:MaterialTextField x:Name="userNameTxt" Placeholder="UserName" UnderlineColor="{StaticResource Primary}"/>
+            <material:MaterialTextField x:Name="passwordTxt" InputType="Password" Placeholder="Password" UnderlineColor="{StaticResource Primary}"/>
+            <material:MaterialButton x:Name="LoginButton" Text="Proceed" Clicked="LoginButton_Clicked" Style="{StaticResource PrimaryButton}"/>
+
+            <Label HorizontalTextAlignment="Center" FontSize="{StaticResource Content_FontSize}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Did you forgot your password?"/>
+                        <Span Text=" Reset" x:Name="resetPasswordPage" TextColor="{StaticResource Primary}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label HorizontalTextAlignment="Center" FontSize="{StaticResource Content_FontSize}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account?"/>
+                        <Span Text=" Sign Up" x:Name="signupPage" TextColor="{StaticResource Primary}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

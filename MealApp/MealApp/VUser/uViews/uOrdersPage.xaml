@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.VUser.uViews.uOrdersPage"
+             xmlns:cControls="clr-namespace:MealApp.Controls"  >
+    <ContentPage.Content>
+        <RefreshView x:Name="refresher">
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Orders" FontSize="30"  HorizontalOptions="Center" />
+                <StackLayout x:Name="ordersList" Orientation="Vertical" >
+                    <!--<cControls:cOrderItem OrderID="1231" DeliveryStatus="PENDING" Order></cControls:cOrderItem>-->
+                </StackLayout>
+            </StackLayout>
+        </RefreshView> 
+    </ContentPage.Content>
+</ContentPage>

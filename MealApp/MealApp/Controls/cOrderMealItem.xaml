@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.Controls.cOrderMealItem">
+  <ContentView.Content>
+
+        <Grid x:Name="ProductTitleRowGrid" BackgroundColor="LightGray"  RowDefinitions="2*,1*" ColumnDefinitions="1*,100" Padding="5" >
+            <Label VerticalTextAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" x:Name="productNameLabel" Text="ProductName X 1"/>
+            <Label VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" TextColor="{StaticResource Primary}" HorizontalTextAlignment="End" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span x:Name="quantityLabel"  Text=""/>
+                        <Span Text=" * "/>
+                        <Span x:Name="priceLabel" Text=""/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" TextColor="{StaticResource Primary}" HorizontalTextAlignment="End" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Rs."/>
+                        <Span x:Name="totalPriceLabel" Text="00"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

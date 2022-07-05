@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.VUser.uViews.uProductDetailsPage" 
+             Shell.NavBarIsVisible="False" 
+             BackgroundColor="{StaticResource BackgroundPrimary}"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:cControls="clr-namespace:MealApp.Controls"  >
+
+    <ContentPage.Content >
+        <ScrollView BackgroundColor="{StaticResource BackgroundPrimary}">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="140"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Frame Padding="0" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"  BackgroundColor="Transparent" >
+                    <cControls:cImage x:Name="ProductImage"  Aspect="AspectFill" />
+                </Frame>
+                <Grid Grid.Row="0"  ColumnDefinitions="5,50,1*,50,5" RowDefinitions="1*,4*">
+                    <material:MaterialIcon x:Name="iconBack"  Grid.Column="1" Grid.Row="1" TintColor="{StaticResource PrimaryDark}" Source="icon_back.png"/>
+                    <material:MaterialIcon  x:Name="iconCart" Grid.Column="3" Grid.Row="1" TintColor="{StaticResource PrimaryDark}"  Source="icon_cart.png"/>
+                </Grid>
+                <Grid Grid.Row="2" Padding="0">
+                    <Path 
+                            Stroke="#FEFEFE"
+                            Aspect="Fill"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Fill="#FEFEFE"
+                            Data="M26 0l223 0c14,0 26,11 26,26l0 0 -274 0 0 0c0,-14 11,-26 26,-26z"/>
+                </Grid>
+                <StackLayout  Grid.Row="2" Grid.RowSpan="2" Padding="25">
+                    <Label x:Name="ProductNameTxt" Text="Habenero Kick" FontSize="30"  />
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rs. " FontSize="20"/>
+                                <Span x:Name="ProductPriceTxt" Text="999" FontSize="30"/>
+                                <Span Text=" / Portion " FontSize="15"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Description" FontSize="20" />
+                    <Label x:Name="ProductDescriptionTxt">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</Label>
+                </StackLayout>
+                <Grid Margin="0" Grid.Row=" 4" Padding="0">
+                    <Grid Padding="5" ColumnDefinitions="1*,1*" RowDefinitions="40,50,120,1*">
+
+                        <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                  ColumnDefinitions="2*,3*" Padding="0">
+                            <Label  
+                                    VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                                    Grid.Column="0" FontSize="20" Text="No of Item"/>
+                            <StackLayout Grid.Column="1"
+                                             Orientation="Horizontal" Padding="0" Spacing="0" >
+
+                                <material:MaterialButton x:Name="deccreaseCountBtn"
+                                        HeightRequest="40" WidthRequest="70" CornerRadius="20" 
+                                        BackgroundColor="{StaticResource Primary}" Text="-"
+                                                             Clicked="deccreaseCountBtn_Clicked" />
+                                <Frame  
+                                        Padding="0" CornerRadius="20" 
+                                        BorderColor="{StaticResource Primary}" >
+                                    <Label  x:Name="countLabel"
+                                            HeightRequest="40" WidthRequest="70" 
+                                            VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Center"
+                                            FontSize="18"/>
+                                </Frame>
+                                <material:MaterialButton  x:Name="increaseCountBtn"
+                                        HeightRequest="40" WidthRequest="70" CornerRadius="20" 
+                                        BackgroundColor="{StaticResource Primary}" 
+                                        Text="+" Clicked="increaseCountBtn_Clicked" />
+                            </StackLayout>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Label HorizontalTextAlignment="End" Margin="0,0,30,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Total Price  "/>
+                                        <Span x:Name="TotalPriceTxt" TextColor="{StaticResource Primary}"  FontSize="35" FontAttributes="Bold" Text=""/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                        <Grid Grid.Row="2"  Grid.ColumnSpan="2">
+                            <Path 
+                                    Aspect="UniformToFill"
+                                    Data="M52 32l0 0c0,18 -14,32 -32,32l-20 0 0 -64 20 0c18,0 32,14 32,32z"
+                                    Fill="purple"/>
+                            <Frame CornerRadius="80" Margin="20"  Padding="0" BackgroundColor="{StaticResource BackgroundPrimary}" BorderColor="{StaticResource BackgroundPrimary}" HasShadow="False">
+                                <Grid Padding="46,6,46,6" >
+                                    <Label/>
+
+                                    <material:MaterialButton  x:Name="AddToCartBtn" Style="{StaticResource PrimaryButton_Outline}" 
+                                                                 Text="Add To Cart" Clicked="AddToCartBtn_Clicked"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

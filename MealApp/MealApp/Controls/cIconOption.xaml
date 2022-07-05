@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.Controls.cIconOption" 
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:cControls="clr-namespace:MealApp.Controls"  >
+    <ContentView.Content>
+        <Frame x:Name="mainFrame" CornerRadius="20" Padding="0" HasShadow="True" BorderColor="{StaticResource BackgroundPrimary}"  BackgroundColor="{StaticResource BackgroundPrimary}" >
+            <Grid   Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <cControls:cImage x:Name="ImageIcon" Grid.Row="0" WidthRequest="100" Aspect="AspectFill" />
+                <Label x:Name="title" HorizontalTextAlignment="Center" Grid.Row="1"  Margin="0,0,0,5" />
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

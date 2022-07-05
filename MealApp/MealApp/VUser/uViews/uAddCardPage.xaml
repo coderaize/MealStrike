@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.VUser.uViews.uAddCardPage"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Label Text="Add Card" FontSize="30"
+                HorizontalTextAlignment="Center"
+                   />
+            <Rectangle HeightRequest="5"/>
+            <material:MaterialTextField x:Name="cardTitleTxt" Placeholder="Card Title" UnderlineColor="{StaticResource Primary}" />
+            <material:MaterialTextField x:Name="cardNumberTxt" Placeholder="Card Number" UnderlineColor="{StaticResource Primary}" />
+            <Grid RowDefinitions="50" ColumnDefinitions="1*,1*">
+                <material:MaterialTextField Grid.Column="0" x:Name="expiryYearTxt" InputType="Numeric" MaxLength="4" IsMaxLengthCounterVisible="True" Placeholder="Expiry Year" UnderlineColor="{StaticResource Primary}" />
+                <material:MaterialTextField Grid.Column="1" x:Name="cvv2Txt" InputType="Numeric" MaxLength="3" IsMaxLengthCounterVisible="true" Placeholder="CVV " UnderlineColor="{StaticResource Primary}" />
+            </Grid>
+            <material:MaterialTextField x:Name="descriptionTxt" Placeholder="Description" UnderlineColor="{StaticResource Primary}" />
+            <material:MaterialButton Text="Save" Style="{StaticResource PrimaryButton}" x:Name="SaveCardButton" Clicked="SaveCardButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

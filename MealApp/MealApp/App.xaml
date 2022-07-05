@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealApp.App"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             >
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="BackgroundPrimary" >#FEFEFE</Color>
+            <Color x:Key="Primary">#7b34aa</Color>
+            <Color x:Key="PrimaryDark">#320f4c</Color>
+            <Color x:Key="PrimaryLight">#b887d8</Color>
+            <Color x:Key="Danger">#D61010</Color>
+
+            <!--Fonts-->
+            <x:Double x:Key="Title_FontSize" >45</x:Double>
+            <x:Double x:Key="Content_FontSize">20</x:Double>
+            <Color x:Key="Text_Primary" >#414141</Color>
+            <Color x:Key="Text_Rating">#FF5733</Color>
+
+            <!-- -->
+            <Style x:Key="PrimaryButton" TargetType="material:MaterialButton">
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="HeightRequest" Value="70"/>
+            </Style>
+            <Style x:Key="PrimaryButton_Outline" TargetType="material:MaterialButton">
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundPrimary}"/>
+                <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="Elevation" Value="50"/>
+                
+                <Style.Triggers>
+                    <Trigger TargetType="material:MaterialButton" Property="IsPressed">
+                        <Setter Property="Background" Value="{StaticResource Primary}"/>
+                        <Setter Property="TextColor" Value="White"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
